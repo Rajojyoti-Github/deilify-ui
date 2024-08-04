@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+  <div class="logo">
+    <ion-img class="img" src="assets/icon/Deilify.png" alt="logo"></ion-img>
+  </div>
+
+  <div class="container">
+    <div class="welcome-text">
+      <h2>Welcome Back, Login</h2>
+    </div>
+    <ion-item>
+      <ion-label class="placeh" text-wrap>+91</ion-label>
+      <ion-input class="mob" #inputinfo placeholder="Phone no."
+        inputmode="tel" value="number" type="text" minlength="10" maxlength="10"
+         [(ngModel)]="phoneNumber" (ionChange)="validatePhone($event)"></ion-input>
+    </ion-item>
+
+    <div class="register-text">
+      <p>Don't have an account? <a (click)="Registration()">Register</a></p>
+    </div>
+
+    <ion-row class="btn-row">
+      <ion-col>
+        <ion-button strong="true" mode="md" expand="block" fill="solid" [disabled]="invalidPhone" (click)="getOtp(inputinfo)">
+          Get OTP</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
+

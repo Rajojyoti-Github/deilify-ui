@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <!-- forms for entering details -->
+    <form (ngSubmit)="f.valid && addUserDetails()" #f="ngForm">
+      <div class="container">
+        <ion-item>
+          <ion-input class="mob" placeholder="Full Name" type="text" #fullName="ngModel" 
+            name="fullName" placeholder="Full Name" [(ngModel)]="form.fullName"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label class="placeh" text-wrap>+91</ion-label>
+          <ion-input class="mob" placeholder="Phone no." pattern="^[0-9]{10}$" inputmode="tel" 
+            value="number" type="text" minlength="10" maxlength="10" [(ngModel)]="form.mobileNumber"  
+            #mobileNumber="ngModel" name="mobileNumber" required></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-input class="mob" placeholder="Email" type="text" #email="ngModel" name="email" 
+            [(ngModel)]="form.email"></ion-input>
+        </ion-item>
+      </div>
+    
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <p class="myPreference">My Preferences</p>
+            <ion-button fill="outline" size="small" [color]="isSelected('Dry Cleaning') ? 'primary' : 'medium'" (click)="toggleSelection('Dry Cleaning')">Dry Cleaning</ion-button>
+            <ion-button fill="outline" size="small" [color]="isSelected('Dying') ? 'primary' : 'medium'" (click)="toggleSelection('Dying')">Dying</ion-button>
+            <ion-button fill="outline" size="small" [color]="isSelected('Express Wash') ? 'primary' : 'medium'" (click)="toggleSelection('Express Wash')">Express Wash</ion-button>
+            <ion-button fill="outline" size="small" [color]="isSelected('Washing Laundry') ? 'primary' : 'medium'" (click)="toggleSelection('Washing Laundry')">Washing Laundry</ion-button>
+            <ion-button fill="outline" size="small" [color]="isSelected('Ironing') ? 'primary' : 'medium'" (click)="toggleSelection('Ironing')">Ironing</ion-button>
+            <ion-button fill="outline" size="small" [color]="isSelected('Mending & Repairing') ? 'primary' : 'medium'" (click)="toggleSelection('Mending & Repairing')">Mending & Repairing</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid class="saveBtn">
+        <ion-row>
+          <ion-col size="12">
+            <ion-button type="submit" class="saveChangesBtn" strong="true" mode="md" expand="block" fill="solid">Save Changes</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+
+</ion-content>

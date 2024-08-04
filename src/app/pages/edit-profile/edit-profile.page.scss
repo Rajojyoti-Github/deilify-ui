@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+.mob {
+    margin: 0 !important;
+    flex: 5 !important;
+}
+
+.placeh {
+    flex: .2 !important;
+    font-size: small;
+    font-weight: bold;
+    margin: 5px;
+}
+
+ion-item {
+    border-style: groove;
+    margin-bottom: 20px;
+  }
+  
+.saveChangesBtn {
+    height: 45px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0px 15px 0px 15px;
+    --color: var(--ion-color-light);
+    &[disabled] {
+        --background: #b8acac;
+    }
+}
+
+.myPreference {
+    font-size: small;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.saveBtn {
+    padding-top: 50%;
+}
+
+ion-label {
+    margin: 5px;
+}
+
+ion-row {
+    padding-top: 25px;
+}
+
+ion-button {
+    margin: 5px;
+    text-transform: capitalize;
+}

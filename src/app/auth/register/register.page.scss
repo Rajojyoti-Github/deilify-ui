@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    margin-top: 50px;
+  }
+  
+  ion-item {
+    border-style: groove;
+  }
+  
+  .registerBtn {
+    height: 45px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0px 15px 0px 15px;
+    --color: var(--ion-color-light);
+    &[disabled] {
+      --background: #b8acac;
+    }
+  }
+  
+  .placeh {
+    flex: .2 !important;
+    font-size: small;
+    font-weight: bold;
+    margin: 5px;
+  }
+  .mob {
+    margin: 0 !important;
+    flex: 5 !important;
+  }
+  .img {
+    height: 80px;
+    position: absolute;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-evenly;
+  }
+  
+  .welcome-text {
+    margin: 65px 0px 0px 15px;
+  }
+  
+  .welcome-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .myPreference {
+    font-size: small;
+    font-weight: 600;
+  }
+
+  ion-label {
+    margin: 5px;
+  }
+
+  ion-row {
+    padding-top: 25px;
+  }
+
+  ion-chip {
+    margin: 10px;
+  }
+
+  ion-button {
+    margin: 5px;
+    text-transform: capitalize;
+  }
+
+  

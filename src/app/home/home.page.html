@@ -1,20 +1,117 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-item lines="none">
+      <ion-icon class="navigate" size="small" color="primary" slot="start" name="navigate"></ion-icon>
+      <ion-label>
+        <!-- <ion-text>Current Location</ion-text> -->
+        <ion-button size="small" fill="clear" color="dark" class="current-location">
+          Current Location
+          <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+        </ion-button>
+        <div class="location">Akshya Nagar, Ramamurthi, Bangalore</div>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end">
+        <ion-icon slot="icon-only" name="notifications-outline" class="notify"></ion-icon>
+        <ion-avatar class="profileImage" (click)="editProfile()">
+          <img alt="person-image" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+      </div>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-searchbar placeholder="Search what you need..."></ion-searchbar>
+
+  <ion-card class="boardFlat">
+    <img alt="Flat 10" src="assets/images/Flat10.png" />
+  </ion-card>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <swiper-container #swiper pagination="true">
+      <swiper-slide>
+        <img class="swiperImage" src="assets/images/clothing.png" />
+      </swiper-slide>
+      <swiper-slide>
+        <img  class="swiperImage" src="assets/images/washing.png" />
+      </swiper-slide>
+      <swiper-slide>
+        <img  class="swiperImage" src="assets/images/cleaning.png" />
+      </swiper-slide>
+    </swiper-container>
   </div>
+
+  <!-- Top Rate Near You Section -->
+  <div class="section-title">Top Rate Near You</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-scroll scrollX="true" class="scrolling-wrapper">
+          <div class="card" *ngFor="let item of topRateItems">
+            <ion-card>
+              <img [src]="item.image" />
+            </ion-card>
+            <h6>{{ item.title }}</h6>
+            <p class="price">{{ item.price }}</p>
+          </div>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Mark Andy Section -->
+  <div class="container">
+    <hr class="left-line">
+    <span class="text">Mark Andy, what’s on your mind?</span>
+    <hr class="right-line">
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" *ngFor="let item of mindItems">
+        <div class="circle">
+          <ion-avatar>
+            <img [src]="item.image" />
+          </ion-avatar>
+          <p class="mind-title-name">{{ item.title }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="boardFlat">
+    <img alt="Flat 10" src="assets/images/Flat10.png" />
+  </ion-card>
+
+    <!-- Quick Picks For You Section -->
+    <div class="section-title">Quick picks for you</div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-scroll scrollX="true" class="scrolling-wrapper">
+            <div class="card" *ngFor="let item of topRateItems">
+              <ion-card>
+                <img [src]="item.image" />
+              </ion-card>
+              <h6>{{ item.title }}</h6>
+              <p class="price">{{ item.price }}</p>
+            </div>
+          </ion-scroll>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="ion-text-center">
+      <ion-button fill="outline" size="small">
+        Filter
+        <ion-icon slot="end" name="options-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" size="small">Nearest</ion-button>
+      <ion-button fill="outline" size="small">Rating 4.0+</ion-button>
+      <ion-button fill="outline" size="small">Far Away</ion-button>
+    </div>
+
 </ion-content>
+
+<ion-footer class="ion-no-border footer">
+  <app-bottom-tab-view [tabsTextAvailable]="false"></app-bottom-tab-view>
+</ion-footer>
